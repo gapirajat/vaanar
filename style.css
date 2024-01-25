@@ -74,7 +74,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 
 html {
@@ -88,7 +87,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #0f0f0f;
   color: white;
-  overflow: hidden;
 }
 
 .slide-in {
