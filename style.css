@@ -136,10 +136,12 @@ body {
 }
 
 .landing-page-container {
+  overflow: hidden;
   animation: fadeIn 1s ease-in-out;
 }
 
 .carousel-item {
+  overflow: hidden;
   height: 100vh;
   position: relative;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -303,6 +305,7 @@ body {
 }
 
 .background-image {
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -328,6 +331,7 @@ body {
   }
   .landing-page-container {
     height: 100% !important;
+    overflow: hidden;
   }
   .landing-page-container .home-btn-container {
     bottom: 5rem !important;
@@ -338,7 +342,14 @@ body {
   .landing-page-container .carousel-control-prev {
     left: 1rem !important;
   }
+  .landing-page-container .carousel-inner {
+    overflow: hidden;
+  }
+  .landing-page-container .carousel-inner .carousel-item {
+    overflow: hidden;
+  }
   .landing-page-container .carousel-inner .carousel-item .image-container {
+    overflow: hidden;
     padding-bottom: 0 !important;
     height: 100% !important;
   }
