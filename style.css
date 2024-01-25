@@ -113,11 +113,16 @@ body {
 }
 
 .loader-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   height: 100vh;
 }
 .loader-container video {
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: bottom right;
+     object-position: bottom right;
 }
 
 .landing-page-container {
@@ -299,11 +304,17 @@ body {
 }
 
 @media screen and (max-width: 480px), (max-height: 600px) {
+  .loader-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+  }
   .loader-container video {
-    height: 100% !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    position: absolute !important;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: bottom right;
+       object-position: bottom right;
   }
   .landing-page-container {
     height: 100% !important;
