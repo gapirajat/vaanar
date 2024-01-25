@@ -204,7 +204,6 @@ body {
   max-width: 23rem;
   padding-bottom: 2rem;
   padding-top: 13vh;
-  margin-left: 10%;
 }
 .contact-info .about-info--header, .contact-info .contact-info--header, .about-info .about-info--header, .about-info .contact-info--header {
   text-transform: uppercase;
@@ -241,7 +240,7 @@ body {
 }
 
 .whole-page-container {
-  height: 100vh;
+  height: 50vh;
   display: flex;
   overflow: hidden;
 }
