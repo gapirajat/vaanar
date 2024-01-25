@@ -28,7 +28,7 @@ $(document).ready(function(){
     // Append the video element to the loader-container
     $('.loader-container').append(video);
     $('video').on('ended',function(){
-      // removeLoader()
+      removeLoader()
       console.log('Video has ended!');
     });
 
