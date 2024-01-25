@@ -11,19 +11,24 @@ $(document).ready(function(){
 
     var video = $('<video id="loader" width="100%" height="99%" autoplay muted playsinline></video>');
 
+
     // Check screen width and set video source accordingly
-    if ($(window).width() <= 600) {
+    if ($(window).width() <= $(window).height()) {
         // Small screen, load mobile video
+        console.log('a');
         video.append('<source src="./images/loader_mobile.mp4" type="video/mp4">');
+        // video.append('<source src="./images/loader.mp4" type="video/mp4">');
     } else {
         // Larger screen, load desktop video
+        console.log($(window).height())
         video.append('<source src="./images/loader.mp4" type="video/mp4">');
+        // video.append('<source src="./images/loader_mobile.mp4" type="video/mp4">')
     }
     // removeLoader()
     // Append the video element to the loader-container
     $('.loader-container').append(video);
     $('video').on('ended',function(){
-      removeLoader()
+      // removeLoader()
       console.log('Video has ended!');
     });
 
