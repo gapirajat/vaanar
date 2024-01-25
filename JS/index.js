@@ -9,7 +9,7 @@ $(document).ready(function(){
     // Unmute the video on page load
     // unmuteVideo();
 
-    var video = $('<video id="loader" width="100%" height="99%" autoplay playsinline></video>');
+    var video = $('<video id="loader" width="100%" height="99%" autoplay muted playsinline></video>');
 
     // Check screen width and set video source accordingly
     if ($(window).width() <= 600) {
