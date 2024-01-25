@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Nexa-ExtraLight';
+    src: url("fonts/Nexa-ExtraLight.ttf");
+    src: url("./fonts/Nexa-ExtraLight.ttf") format("truetype");
+    }
+@font-face {
+    font-family: 'Nexa-Heavy';
+    src: url("fonts/Nexa-Heavy.ttf");
+    src: url("./fonts/Nexa-Heavy.ttf") format("truetype");
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+}
+.slide-in {
+    opacity: 0;
+    transition: all .5s;
+    transform: translateX(30%) scale(0.95)
+}
+.slide-in.active {
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+}
+
+.scaleUp {
+    animation: scaleUp 0.5s forwards;
+}
+
+.slide-up {
+    animation: slide-up 2s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+.hide {
+    display: none!important;
+}
