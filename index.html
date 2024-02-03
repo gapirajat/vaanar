@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaanar Nirmit</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./JS/index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <section id="loader">
+      <article>
+        <div class="loader-container">
+          <video
+            id="loader"
+            width="100%"
+            height="99%"
+            autoplay
+            muted
+            playsinline
+          >
+            <source
+              src="./images/loader_mobile.mp4"
+              type="video/mp4"
+              media="(max-width: 480px)"
+            />
+            <source
+              src="./images/loader.mp4"
+              type="video/mp4"
+              media="(min-width: 481px)"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </article>
+    </section>
+    <section>
+      <article id="work" class="landing-page-container hide">
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item first active">
+              <div class="image-container">
+                <!-- Use a background image instead of an img tag -->
+                <div
+                  class="background-image"
+                  style="background-image: url('./images/work1.jpg')"
+                ></div>
+              </div>
+              <div class="work-info">
+                <div class="work-info--header">fiction. short. marathi</div>
+                <div class="work-info--artist">by Bharat Mohan Sunita</div>
+              </div>
+            </div>
+            <div class="carousel-item second">
+              <div class="image-container">
+                <!-- Use a background image instead of an img tag -->
+                <div
+                  class="background-image"
+                  style="background-image: url('./images/work2.jpg')"
+                ></div>
+              </div>
+              <div class="work-info">
+                <div class="work-info--header">fiction. feature</div>
+                <div class="work-info--artist">by Abhimanyu Dange</div>
+              </div>
+            </div>
+            <div class="carousel-item three">
+              <div class="image-container">
+                <!-- Use a background image instead of an img tag -->
+                <div
+                  class="background-image"
+                  style="background-image: url('./images/work4.jpg')"
+                ></div>
+              </div>
+              <div class="work-info">
+                <div class="work-info--header">documentary. feature</div>
+                <div class="work-info--artist">by Isha Pungaliya</div>
+              </div>
+            </div>
+            <div class="carousel-item fourth">
+              <div class="image-container">
+                <!-- Use a background image instead of an img tag -->
+                <div
+                  class="background-image"
+                  style="background-image: url('./images/work3.jpg')"
+                ></div>
+              </div>
+              <div class="work-info">
+                <img class="film" src="./images/badge.svg" />
+                <div class="work-info--header">
+                  based on a true story. feature
+                </div>
+                <div class="work-info--artist">by Alok Rajwade</div>
+              </div>
+            </div>
+            <div class="carousel-item fifth">
+              <div class="image-container">
+                <!-- Use a background image instead of an img tag -->
+                <div
+                  class="background-image"
+                  style="background-image: url('./images/work5.jpg')"
+                ></div>
+              </div>
+              <div class="work-info">
+                <div class="work-info--header">fiction. feature</div>
+                <div class="work-info--artist">by Isha Pungaliya</div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="home-btn-container" id="homeIcon">
+          <a class="home"></a>
+        </div>
+      </article>
+      <article id="menu-about-contact" class="whole-page-container hide">
+        <article id="home" class="home-page-container hide">
+          <div class="menu">
+            <ul>
+              <li><a href="#" id="workIcon">Work</a></li>
+              <li><a href="#" id="newsIcon">News</a></li>
+              <li><a href="#" id="aboutIcon">About</a></li>
+              <li><a href="#" id="contactIcon">Contact</a></li>
+            </ul>
+          </div>
+        </article>
+        <div id="about" class="about hide">
+          <div class="home-btn-container" id="abouthomeIcon">
+            <a class="home"></a>
+          </div>
+          <div class="about-info">
+            <div id="aboutIcon" class="about-info--header">ABOUT</div>
+            <div class="about-info--text">
+              Vaanar can span the globe in one leap and Vaanar can be subsumed
+              in the minutest detail. That is the scope and ability with which
+              every project materializes. With reverence only to high standards,
+              once undertaken, a task is approached with diligence, passion and
+              punctuality. <br /><br />
+              Vaanar commits, completes, excels.
+            </div>
+          </div>
+        </div>
+        <div id="contact" class="contact hide">
+          <div class="home-btn-container" id="contacthomeIcon">
+            <a class="home"></a>
+          </div>
+          <div class="contact-info">
+            <div class="contact-info--header">CONTACT</div>
+            <div class="contact-info--text">info@vaanarnirmit.com</div>
+            <div class="icons">
+              <img src="./images/fb.svg" />
+              <img src="./images/insta.svg" />
+              <img id="linkedIn" src="./images/linkedin.svg" />
+            </div>
+          </div>
+        </div>
+        <img src="./images/logo.svg" id="logo" class="logo-scale" />
+      </article>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

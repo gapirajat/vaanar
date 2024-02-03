@@ -1,0 +1,657 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scaleUpDown {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* Adjust the scale factor as needed */
+  }
+}
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0%);
+  }
+  70% {
+    transform: translateX(-70);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes scaleAndMoveUp {
+  0% {
+    transform: scale(1) translateY(0) translateX(0);
+  }
+  100% {
+    transform: scale(1.5) translateY(-55px) translateX(20px); /* Element stops at this state */
+  }
+}
+@keyframes scaleAndMoveUp2 {
+  0% {
+    transform: scale(1) translateY(0) translateX(0);
+  }
+  100% {
+    transform: scale(1.4) translateY(-80px) translateX(20px); /* Element stops at this state */
+  }
+}
+@keyframes slide-in-anim {
+  20% {
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(45%);
+  }
+  75% {
+    transform: translateY(52%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(50%);
+  }
+}
+@font-face {
+  font-family: "Nexa-ExtraLight";
+  src: url("fonts/Nexa-ExtraLight.ttf");
+  src: url("./fonts/Nexa-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Nexa-Heavy";
+  src: url("fonts/Nexa-Heavy.ttf");
+  src: url("./fonts/Nexa-Heavy.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+}
+
+.slide-in {
+  opacity: 0;
+  transition: all 0.5s;
+  transform: translateX(30%) scale(0.95);
+}
+
+.slide-in.active {
+  opacity: 1;
+  transform: translateX(0%) scale(1);
+}
+
+.scaleUp {
+  animation: scaleUp 0.5s forwards;
+}
+
+.slide-up {
+  animation: slide-up 2s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+.hide {
+  display: none !important;
+}
+
+.loader-container {
+  height: 100dvh;
+}
+.loader-container video {
+  -o-object-fit: cover;
+  object-fit: cover;
+  object-position: right;
+}
+
+.landing-page-container {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.carousel-item {
+  height: 100dvh;
+  position: relative;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-duration: 5s;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50%;
+}
+
+.work-info {
+  color: white;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 2.5s;
+}
+.work-info img {
+  width: 9rem;
+  height: auto !important;
+}
+.work-info .work-info--header {
+  font-family: "Nexa-ExtraLight";
+  font-size: 1.5rem;
+}
+.work-info .work-info--artist {
+  font-family: "Nexa-Heavy";
+  font-size: 0.9rem;
+}
+
+.home-btn-container {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  z-index: 999;
+  background-image: url("./images/home_button.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  animation: scaleUpDown 1s infinite;
+}
+.home-btn-container:hover {
+  transform: scale(1.5);
+  animation: none;
+}
+
+.contact-info,
+.about-info {
+  align-self: flex-start !important;
+  padding-left: 3rem;
+  font-family: "Nexa-ExtraLight";
+  position: relative;
+  padding-bottom: 0 !important;
+  max-width: 95%;
+  padding-top: 15rem !important;
+}
+.contact-info .about-info--header,
+.contact-info .contact-info--header,
+.about-info .about-info--header,
+.about-info .contact-info--header {
+  text-transform: uppercase;
+  font-size: 2rem;
+  /* transform: translateY(-100%); */
+  position: absolute;
+  /* top: 0; */
+  animation: scaleAndMoveUp 1.5s forwards;
+}
+
+.contact-info .about-info--text,
+.contact-info .contact-info--text,
+.about-info .about-info--text,
+.about-info .contact-info--text {
+  /* text-transform: uppercase; */
+  font-size: 0.9rem;
+  opacity: 0; /* Start with an initial opacity of 0 */
+  animation: fadeIn 5s ease-in-out; /* Adjust duration and timing function as needed */
+  animation-fill-mode: forwards; /* Retain the final state of the animation */
+}
+
+.menu ul {
+  padding-left: 0;
+}
+.contact-info .contact-info--header,
+.about-info .contact-info--header {
+  margin-bottom: 0 !important;
+  animation: scaleAndMoveUp 2s forwards !important;
+}
+.contact-info .contact-info--text,
+.about-info .contact-info--text {
+  text-transform: none !important;
+}
+
+.contact-info .icons img,
+.about-info .icons img {
+  width: 2rem;
+  height: 2rem;
+  position: inherit;
+  margin: 1rem 1rem 1rem 0;
+  opacity: 0; /* Start with an initial opacity of 0 */
+  animation: fadeIn 3s ease-in-out; /* Adjust duration and timing function as needed */
+  animation-fill-mode: forwards; /* Retain the final state of the animation */
+}
+
+.icons {
+  margin-left: -0.3rem;
+}
+
+.whole-page-container {
+  height: 100dvh;
+  display: flex;
+  width: 100%;
+}
+.whole-page-container .home-page-container {
+  height: 100dvh;
+  background-color: #0f0f0f;
+  color: white;
+}
+.whole-page-container .home-page-container .menu {
+  height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.whole-page-container .home-page-container .menu li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+.whole-page-container .home-page-container .menu li a {
+  text-decoration: none;
+  color: #535353;
+  font-family: "Nexa-ExtraLight";
+}
+.whole-page-container .home-page-container .menu li a:hover {
+  color: white;
+  font-size: 1.5rem;
+}
+.whole-page-container .about,
+.whole-page-container .contact,
+.whole-page-container .home-page-container {
+  height: 100dvh;
+  width: 50%;
+  display: flex;
+}
+.whole-page-container .about .home-btn-container,
+.whole-page-container .contact .home-btn-container,
+.whole-page-container .home-page-container .home-btn-container {
+  top: 3rem;
+  left: 3rem;
+}
+.whole-page-container img {
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom right;
+  width: clamp(15rem, 10vw, 25rem);
+}
+
+.scale-down-logo {
+  transform: scale(0.4);
+  transition: transform 0.3s ease-in-out;
+}
+
+.scale-up-logo {
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 75%; /* Adjust this percentage based on the aspect ratio of your images */
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background-size: cover;
+  /* Use background-position to adjust the frame of the image */
+  background-position: center center;
+}
+
+@media screen and (min-width: 2400px) {
+  .work-info .work-info--header {
+    font-family: "Nexa-ExtraLight";
+    font-size: 3rem;
+  }
+  .work-info .work-info--artist {
+    font-family: "Nexa-Heavy";
+    font-size: 2rem;
+  }
+
+  .contact-info .about-info--header,
+  .contact-info .contact-info--header,
+  .about-info .about-info--header,
+  .about-info .contact-info--header {
+    text-transform: uppercase;
+    font-size: 4rem;
+    /* transform: translateY(-100%); */
+    position: absolute;
+    top: 0;
+    animation: scaleAndMoveUp 1.5s forwards;
+  }
+
+  .contact-info .about-info--text,
+  .contact-info .contact-info--text,
+  .about-info .about-info--text,
+  .about-info .contact-info--text {
+    text-transform: uppercase;
+    font-size: 2rem;
+    opacity: 0; /* Start with an initial opacity of 0 */
+    animation: fadeIn 5s ease-in-out; /* Adjust duration and timing function as needed */
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+  }
+
+  .whole-page-container .home-page-container .menu {
+    height: 100dvh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+  }
+
+  .whole-page-container .home-page-container .menu li a:hover {
+    color: white;
+    font-size: 3rem;
+  }
+}
+
+#linkedIn {
+  margin-left: 0.4rem;
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 1200px) and (orientation: portrait) {
+  .whole-page-container .about,
+  .whole-page-container .contact {
+    height: calc(100% - 11rem) !important;
+  }
+  .menu ul {
+    padding-left: 0;
+  }
+
+  .work-info .work-info--artist {
+    font-family: "Nexa-Heavy";
+    font-size: 0.8rem;
+  }
+  .whole-page-container .about-info,
+  .whole-page-container .contact-info {
+    align-self: flex-start !important;
+    padding-bottom: 0 !important;
+    max-width: 95% !important;
+    padding-left: 3rem !important;
+    padding-top: 7rem !important;
+  }
+  .whole-page-container .about-info--text,
+  .whole-page-container .contact-info--text {
+    animation-duration: 2s !important;
+  }
+  .whole-page-container .about-info--header,
+  .whole-page-container .contact-info--header {
+    position: static !important;
+    animation: none !important;
+    margin-bottom: 1rem !important;
+  }
+}
+@media only screen and (min-device-width: 1000px) and (max-device-width: 2400px) and (orientation: landscape) {
+  .whole-page-container .home-page-container .menu {
+    height: auto !important;
+    align-items: flex-end !important;
+    padding-bottom: 0 !important;
+    padding-left: 3rem !important;
+    padding-top: 6rem !important;
+  }
+}
+@media only screen and (min-device-width: 300px) and (max-device-width: 999px) and (orientation: landscape) {
+  .whole-page-container .about,
+  .whole-page-container .contact {
+    height: calc(100% - 11rem) !important;
+  }
+
+  .menu ul {
+    padding-left: 1.5rem;
+  }
+  .whole-page-container .home-page-container .menu {
+    height: auto !important;
+    align-items: flex-start !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-top: 6rem !important;
+  }
+  .whole-page-container .about .home-btn-container,
+  .whole-page-container .contact .home-btn-container {
+    left: 1.5rem !important;
+    top: 2rem !important;
+  }
+  .contact-info .icons img,
+  .about-info .icons img {
+    width: 1.4rem;
+    height: 1.4rem;
+    position: inherit;
+    margin: 1rem 1rem 1rem 0;
+    opacity: 0; /* Start with an initial opacity of 0 */
+    animation: fadeIn 3s ease-in-out; /* Adjust duration and timing function as needed */
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+  }
+  .contact-info .about-info--text,
+  .contact-info .contact-info--text,
+  .about-info .about-info--text,
+  .about-info .contact-info--text {
+    /* text-transform: uppercase; */
+    font-size: 0.8rem;
+    max-width: 100%;
+    opacity: 0; /* Start with an initial opacity of 0 */
+    animation: fadeIn 5s ease-in-out; /* Adjust duration and timing function as needed */
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+  }
+  .whole-page-container .about-info,
+  .whole-page-container .contact-info {
+    align-self: flex-start !important;
+    padding-bottom: 0 !important;
+    max-width: 70% !important;
+    padding-left: 1.7rem !important;
+    padding-top: 5rem !important;
+  }
+
+  .whole-page-container .about-info--text,
+  .whole-page-container .contact-info--text {
+    animation-duration: 2s !important;
+  }
+  .whole-page-container .about-info--header,
+  .whole-page-container .contact-info--header {
+    position: static !important;
+    animation: none !important;
+    font-size: 1.6rem;
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media screen and (max-width: 480px) and (orientation: landscape) {
+  .whole-page-container .about-info,
+  .whole-page-container .contact-info {
+    align-self: flex-start !important;
+    padding-bottom: 0 !important;
+    max-width: 50%;
+    padding-left: 1.7rem !important;
+    padding-top: 5rem !important;
+  }
+
+  .contact-info .icons img,
+  .about-info .icons img {
+    width: 1.4rem;
+    height: 1.4rem;
+    position: inherit;
+    margin: 1rem 1rem 1rem 0;
+    opacity: 0; /* Start with an initial opacity of 0 */
+    animation: fadeIn 3s ease-in-out; /* Adjust duration and timing function as needed */
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .whole-page-container .about {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .loader-container video {
+    height: 100% !important;
+    -o-object-fit: cover;
+    object-fit: cover;
+    right: 0 !important;
+    bottom: 0 !important;
+    position: absolute !important;
+  }
+
+  .work-info .work-info--header {
+    font-family: "Nexa-ExtraLight";
+    font-size: 1.3rem;
+    max-width: 50%;
+  }
+
+  .contact-info .icons img,
+  .about-info .icons img {
+    width: 1.4rem;
+    height: 1.4rem;
+    position: inherit;
+    margin: 1rem 1rem 1rem 0;
+    opacity: 0; /* Start with an initial opacity of 0 */
+    animation: fadeIn 3s ease-in-out; /* Adjust duration and timing function as needed */
+    animation-fill-mode: forwards; /* Retain the final state of the animation */
+  }
+
+  .landing-page-container {
+    height: 100% !important;
+  }
+  .landing-page-container .home-btn-container {
+    bottom: 2.5rem !important;
+  }
+  .landing-page-container .carousel-control-next {
+    right: 1rem !important;
+  }
+  .landing-page-container .carousel-control-prev {
+    left: 1rem !important;
+  }
+  .landing-page-container .carousel-inner .carousel-item .image-container {
+    padding-bottom: 0 !important;
+    height: 100% !important;
+  }
+  .landing-page-container
+    .carousel-inner
+    .carousel-item
+    .image-container
+    .background-image {
+    height: 100% !important;
+  }
+  .landing-page-container .carousel-inner .carousel-item .work-info {
+    bottom: 2.5rem !important;
+  }
+  .landing-page-container .carousel-inner .carousel-item .work-info img {
+    width: 7rem !important;
+  }
+  .landing-page-container .carousel-inner .carousel-item img {
+    height: 100% !important;
+    width: auto !important;
+  }
+  .landing-page-container
+    .carousel-inner
+    .carousel-item.first
+    .background-image {
+    background-image: url("./images/work1_small.jpg") !important;
+  }
+  .landing-page-container
+    .carousel-inner
+    .carousel-item.second
+    .background-image {
+    background-image: url("./images/work2_small.jpg") !important;
+  }
+  .landing-page-container
+    .carousel-inner
+    .carousel-item.three
+    .background-image {
+    background-image: url("./images/work4_small.jpg") !important;
+  }
+  .landing-page-container
+    .carousel-inner
+    .carousel-item.fourth
+    .background-image {
+    background-image: url("./images/work3_small.jpg") !important;
+  }
+  .landing-page-container
+    .carousel-inner
+    .carousel-item.fifth
+    .background-image {
+    background-image: url("./images/work5_small.jpg") !important;
+  }
+  .whole-page-container {
+    display: block;
+    height: 100% !important;
+    position: fixed !important;
+    right: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    top: 0 !important;
+  }
+  .menu ul {
+    padding-left: 0.5rem !important;
+  }
+  .whole-page-container #logo {
+    height: 25% !important;
+    float: right !important;
+  }
+  .whole-page-container .home-page-container {
+    height: 75% !important;
+  }
+  .whole-page-container .home-page-container .menu {
+    height: auto !important;
+    align-items: flex-start !important;
+    padding-bottom: 0 !important;
+    padding-left: 1rem !important;
+    padding-top: 6rem !important;
+  }
+  .whole-page-container .about,
+  .whole-page-container .contact {
+    height: calc(100% - 11rem) !important;
+  }
+  .whole-page-container .about-info,
+  .whole-page-container .contact-info {
+    align-self: flex-start !important;
+    padding-bottom: 0 !important;
+    max-width: 95%;
+    padding-left: 1.7rem !important;
+    padding-top: 7rem !important;
+  }
+  .whole-page-container .about-info--text,
+  .whole-page-container .contact-info--text {
+    animation-duration: 2s !important;
+  }
+  .whole-page-container .about-info--header,
+  .whole-page-container .contact-info--header {
+    position: static !important;
+    animation: none !important;
+    margin-bottom: 1rem !important;
+  }
+  .whole-page-container .about .home-btn-container,
+  .whole-page-container .contact .home-btn-container {
+    left: 1.5rem !important;
+    top: 2rem !important;
+  }
+  .logo-scale .whole-page-container.scale-down-logo {
+    height: 11rem !important;
+  }
+} /*# sourceMappingURL=style.css.map */

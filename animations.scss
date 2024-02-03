@@ -1,0 +1,65 @@
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+
+@keyframes scaleUpDown {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2); /* Adjust the scale factor as needed */
+    }
+  }
+
+@keyframes slideAnimation {
+    0% {
+      transform: translateX(0%);
+    }
+    70% {
+      transform: translateX(-70);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+@keyframes scaleAndMoveUp {
+  0% {
+    transform: scale(1) translateY(0) translateX(0);
+  }
+  100% {
+    transform: scale(1.5) translateY(-95px) translateX(20px); /* Element stops at this state */
+  }
+}
+
+@keyframes scaleAndMoveUp2 {
+  0% {
+    transform: scale(1) translateY(0) translateX(0);
+  }
+  100% {
+    transform: scale(1.4) translateY(-80px) translateX(20px); /* Element stops at this state */
+  }
+}
+
+  @keyframes slide-in-anim {
+    20% {
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(45%);
+    }
+    75% {
+      transform: translateY(52%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(50%);
+    }
+  }
+
