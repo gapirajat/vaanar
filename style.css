@@ -387,7 +387,7 @@ body {
 
   .work-info .work-info--artist {
     font-family: "Nexa-Heavy";
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
   .whole-page-container .about-info,
   .whole-page-container .contact-info {
@@ -520,7 +520,7 @@ body {
 
   .work-info .work-info--header {
     font-family: "Nexa-ExtraLight";
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     //max-width: 70%;
   }
 
