@@ -28,6 +28,7 @@ $(document).ready(function(){
         console.log('Autoplay with sound is not allowed. Error: ' + error.message);
         // Here, you might decide to mute the video and try to play it again or handle it differently
         video.attr('muted', true); // Mute the video as a fallback
+        alert('Please enable audio to enjoy our video content.');
         video[0].play().catch(e => console.log("Failed to play muted video automatically after rejection:", e)); // Attempt to play it muted
     });
 
@@ -46,6 +47,7 @@ $(document).ready(function(){
         console.log('Autoplay with sound is not allowed. Error: ' + error.message);
         // Here, you might decide to mute the video and try to play it again or handle it differently
         video.attr('muted', true); // Mute the video as a fallback
+        alert('Please enable audio to enjoy our video content.');
         video[0].play().catch(e => console.log("Failed to play muted video automatically after rejection:", e)); // Attempt to play it muted
     });
 
