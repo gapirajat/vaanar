@@ -16,21 +16,21 @@ $(document).ready(function(){
     if ($(window).width() <= $(window).height()) {
         // Small screen, load mobile video
         console.log('mobile');
+        var video = $('<video id="loader" width="100%" height="99%" autoplay muted playsinline></video>');
         video.append('<source src="./images/loader_mobile.mp4" type="video/mp4">');
         var promise = video[0].play();
 
-    promise.then(function() {
-        // Autoplay with sound is enabled
-        console.log('Autoplay with sound is enabled.');
-        // Here, you don't need to change the video attributes since autoplay with sound worked
-    }).catch(function(error) {
-        // Autoplay with sound is not allowed
-        console.log('Autoplay with sound is not allowed. Error: ' + error.message);
-        // Here, you might decide to mute the video and try to play it again or handle it differently
-        video.attr('muted', true); // Mute the video as a fallback
-        alert('Please enable audio to enjoy our video content.');
-        video[0].resume().catch(e => console.log("Failed to play muted video automatically after rejection:", e)); // Attempt to play it muted
-    });
+    // promise.then(function() {
+    //     // Autoplay with sound is enabled
+    //     console.log('Autoplay with sound is enabled.');
+    //     // Here, you don't need to change the video attributes since autoplay with sound worked
+    // }).catch(function(error) {
+    //     // Autoplay with sound is not allowed
+    //     console.log('Autoplay with sound is not allowed. Error: ' + error.message);
+    //     // Here, you might decide to mute the video and try to play it again or handle it differently
+    //     video.attr('muted', true); // Mute the video as a fallback
+    //     video[0].resume().catch(e => console.log("Failed to play muted video automatically after rejection:", e)); // Attempt to play it muted
+    // });
 
     } else {
         // Larger screen, load desktop video
