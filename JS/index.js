@@ -39,7 +39,7 @@ promise.then(function() {
     promise2.then(function() {
       video.prop('muted', false)
       $('.loader-container').append(video);
-      }).catch(function(error) {
+      }).catch(function(error2) {
       video.prop('muted', true)
       $('.loader-container').append(video);
         
