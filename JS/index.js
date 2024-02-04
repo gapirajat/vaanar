@@ -17,7 +17,7 @@ if ($(window).width() <= $(window).height()) {
   // Small screen, load mobile video
   console.log('mobile');
   // var video = $('<video id="loader" width="100%" height="99%" autoplay playsinline></video>');
-  video.append('<source src="./images/loader.mp4" type="video/mp4">');
+  video.append('<source src="./images/loader_mobile.mp4" type="video/mp4">');
   var promise = video[0].play();
 
 promise.then(function() {
