@@ -27,9 +27,7 @@ if ($(window).width() <= $(window).height()) {
     return !video[0].paused && !video[0].ended && video[0].readyState > 2;
 }
   $('.loader-container').append(video);
-  setTimeout(5000);
   if (!isVideoPlaying(video)) {
-    //video.remove();
     $('.loader-container').append('<video id="loader2" width="100%" height="99%" autoplay muted playsinline><source src="./images/loader_mobile.mp4" type="video/mp4"></video>');
     
   }
