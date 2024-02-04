@@ -22,6 +22,8 @@ if ($(window).width() <= $(window).height()) {
 
   function isVideoPlaying(video) {
     // Check if video is paused; if it's paused, it's definitely not playing
+    console.log(!video.paused && !video.ended && video.readyState > 2);
+    setTimeout(2000);
     return !video.paused && !video.ended && video.readyState > 2;
 }
   $('.loader-container').append(video);
