@@ -101,8 +101,8 @@ if ($(window).width() <= $(window).height()) {
   $('.loader-container').append(video);
   if (!isVideoPlaying(video)) {
     $('.loader-container').append('<video id="loader2" width="100%" height="99%" autoplay muted playsinline><source src="./images/loader_mobile.mp4" type="video/mp4"></video>');
-    
-});
+
+};
 
 }
 // removeLoader()
