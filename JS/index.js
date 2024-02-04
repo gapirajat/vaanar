@@ -25,8 +25,8 @@ if ($(window).width() <= $(window).height()) {
     return !video.paused && !video.ended && video.readyState > 2;
 }
   if (!isVideoPlaying(video)) {
-    video.prop('muted', false);
-    video.append('<source src="./images/loader_mobile.mp4" type="video/mp4">');
+    video.remove();
+    $('.loader-container').append('<video id="loader2" width="100%" height="99%" autoplay muted playsinline><source src="./images/loader_mobile.mp4" type="video/mp4"></video>');
     
   }
   
