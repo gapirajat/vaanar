@@ -18,35 +18,47 @@ if ($(window).width() <= $(window).height()) {
   console.log('mobile');
   // var video = $('<video id="loader" width="100%" height="99%" autoplay playsinline></video>');
   video.append('<source src="./images/loader_mobile.mp4" type="video/mp4">');
-  var promise = video[0].play();
+  // var promise = video[0].play();
 
-promise.then(function() {
-    // Autoplay with sound is enabled
-    console.log('Autoplay with sound is enabled.');
-    // Here, you don't need to change the video attributes since autoplay with sound worked
-    video.prop('muted', false)
-    $('.loader-container').append(video);
-}).catch(function(error) {
-    // Autoplay with sound is not allowed
-    console.log('Autoplay with sound is not allowed. Error: ' + error);
-    //alert(promise);
-    // Here, you might decide to mute the video and try to play it again or handle it differently
-    // $('#loader2').remove();
-    // var video1 = $('</video>');
+  function isVideoPlaying(video) {
+    // Check if video is paused; if it's paused, it's definitely not playing
+    return !videoElement.paused && !videoElement.ended && videoElement.readyState > 2;
+}
+  if (!isVideoPlaying(video)) {
+    video.prop('muted', false);
+    video.append('<source src="./images/loader_mobile.mp4" type="video/mp4">');
     
-    setTimeout(1000);
-    var promise2 = video[0].play();
-    promise2.then(function() {
-      video.prop('muted', false)
-      $('.loader-container').append(video);
-      }).catch(function(error2) {
-      console.log(error2);
-      video.prop('muted', true)
-      $('.loader-container').append(video);
+  }
+  
+
+
+// promise.then(function() {
+//     // Autoplay with sound is enabled
+//     console.log('Autoplay with sound is enabled.');
+//     // Here, you don't need to change the video attributes since autoplay with sound worked
+//     video.prop('muted', false)
+//     $('.loader-container').append(video);
+// }).catch(function(error) {
+//     // Autoplay with sound is not allowed
+//     console.log('Autoplay with sound is not allowed. Error: ' + error);
+//     //alert(promise);
+//     // Here, you might decide to mute the video and try to play it again or handle it differently
+//     // $('#loader2').remove();
+//     // var video1 = $('</video>');
+    
+//     setTimeout(1000);
+//     var promise2 = video[0].play();
+//     promise2.then(function() {
+//       video.prop('muted', false)
+//       $('.loader-container').append(video);
+//       }).catch(function(error2) {
+//       console.log(error2);
+//       video.prop('muted', true)
+//       $('.loader-container').append(video);
         
-      }
+//       }
       
-    )
+//     )
     // video1[0].play().catch(e => console.log("Failed to play muted video automatically after rejection:", e)); // Attempt to play it muted
     
   //   $('#loader').on('ended', function() {
