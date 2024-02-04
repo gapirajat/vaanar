@@ -33,8 +33,19 @@ promise.then(function() {
     // Here, you might decide to mute the video and try to play it again or handle it differently
     // $('#loader2').remove();
     // var video1 = $('</video>');
-    video.prop('muted', false)
-    $('.loader-container').append(video);
+    
+    setTimeout(1000);
+    var promise2 = video[0].play();
+    promise2.then(function() {
+      video.prop('muted', false)
+      $('.loader-container').append(video);
+      }).catch(function(error) {
+      video.prop('muted', true)
+      $('.loader-container').append(video);
+        
+      }
+      
+    )
     // video1[0].play().catch(e => console.log("Failed to play muted video automatically after rejection:", e)); // Attempt to play it muted
     
   //   $('#loader').on('ended', function() {
