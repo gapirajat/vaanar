@@ -9,7 +9,7 @@ $(document).ready(function(){
 // Unmute the video on page load
 // unmuteVideo();
 
-var video = $('<video id="loader2" width="100%" height="99%" autoplay playsinline></video>');
+var video = $('<video id="loader1" width="100%" height="99%" autoplay playsinline></video>');
 
 
 // Check screen width and set video source accordingly
@@ -90,7 +90,7 @@ promise.then(function() {
 }
 // removeLoader()
 // Append the video element to the loader-container
-$('.loader-container').append(video);
+//$('.loader-container').append(video);
 
 
 
