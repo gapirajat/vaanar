@@ -24,6 +24,7 @@ promise.then(function() {
     // Autoplay with sound is enabled
     console.log('Autoplay with sound is enabled.');
     // Here, you don't need to change the video attributes since autoplay with sound worked
+    video.prop('muted', false)
     $('.loader-container').append(video);
 }).catch(function(error) {
     // Autoplay with sound is not allowed
@@ -32,7 +33,7 @@ promise.then(function() {
     // Here, you might decide to mute the video and try to play it again or handle it differently
     // $('#loader2').remove();
     // var video1 = $('</video>');
-    //video.prop('muted', true)
+    video.prop('muted', false)
     $('.loader-container').append(video);
     // video1[0].play().catch(e => console.log("Failed to play muted video automatically after rejection:", e)); // Attempt to play it muted
     
