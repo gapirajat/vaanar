@@ -24,6 +24,7 @@ if ($(window).width() <= $(window).height()) {
     // Check if video is paused; if it's paused, it's definitely not playing
     return !video.paused && !video.ended && video.readyState > 2;
 }
+  $('.loader-container').append(video);
   if (!isVideoPlaying(video)) {
     video.remove();
     $('.loader-container').append('<video id="loader2" width="100%" height="99%" autoplay muted playsinline><source src="./images/loader_mobile.mp4" type="video/mp4"></video>');
