@@ -28,10 +28,11 @@ promise.then(function() {
 }).catch(function(error) {
     // Autoplay with sound is not allowed
     console.log('Autoplay with sound is not allowed. Error: ' + error.message);
+    alert(error.message);
     // Here, you might decide to mute the video and try to play it again or handle it differently
     // $('#loader2').remove();
     // var video1 = $('</video>');
-    video.prop('muted', true)
+    //video.prop('muted', true)
     $('.loader-container').append(video);
     // video1[0].play().catch(e => console.log("Failed to play muted video automatically after rejection:", e)); // Attempt to play it muted
     
