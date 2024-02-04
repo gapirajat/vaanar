@@ -65,7 +65,8 @@ if ($(window).width() <= $(window).height()) {
   //     console.log('Video playback has ended. Removing the video element.');
   //     $('video').remove(); // Removes the video element from the DOM
   // });
-});
+// }
+  // );
 
 } else {
   // Larger screen, load desktop video
