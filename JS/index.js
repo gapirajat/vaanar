@@ -40,7 +40,7 @@ promise.then(function() {
       video.prop('muted', false)
       $('.loader-container').append(video);
       }).catch(function(error2) {
-      connsole.log(error2);
+      console.log(error2);
       video.prop('muted', true)
       $('.loader-container').append(video);
         
