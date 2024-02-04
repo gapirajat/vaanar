@@ -22,7 +22,7 @@ if ($(window).width() <= $(window).height()) {
 
   function isVideoPlaying(video) {
     // Check if video is paused; if it's paused, it's definitely not playing
-    return !video.paused && !videot.ended && video.readyState > 2;
+    return !video.paused && !video.ended && video.readyState > 2;
 }
   if (!isVideoPlaying(video)) {
     video.prop('muted', false);
