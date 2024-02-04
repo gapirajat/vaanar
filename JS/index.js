@@ -95,16 +95,20 @@ if ($(window).width() <= $(window).height()) {
   function isVideoPlaying(video) {
     // Check if video is paused; if it's paused, it's definitely not playing
     console.log(video[0].paused,video[0].ended,video[0].readyState);
-    setTimeout(2000);
+    
+    // sleep(2000);
     return !video[0].paused && !video[0].ended && video[0].readyState > 2;
 }
   $('.loader-container').append(video);
-  if (!isVideoPlaying(video)) {
-    $('.loader-container').append('<video id="loader2" width="100%" height="99%" autoplay muted playsinline><source src="./images/loader_mobile.mp4" type="video/mp4"></video>');
-
-};
-
+  
+      console.log(isVideoPlaying(video));
+      video.css("display", "none");
+      // $('.loader-container').css("display", "none");
+      $('#loader1').before('<video id="loader" width="100%" height="99%"  autoplay muted playsinline><source src="./images/loader.mp4" type="video/mp4"></video>');
+  
 }
+
+
 // removeLoader()
 // Append the video element to the loader-container
 //$('.loader-container').append(video);
