@@ -9,9 +9,36 @@ $(document).ready(function(){
 // Unmute the video on page load
 // unmuteVideo();
 
+function cloneSVG() {
+  const svgContainer = document.getElementById('svgContainer');
+  const originalSvg = document.getElementById('logo');
+  const rect = originalSvg.getBoundingClientRect();
+  const containerRect = svgContainer.getBoundingClientRect();
+
+  const cloneX = rect.left - containerRect.left;// - svgContainer.scrollLeft;
+  const cloneY = rect.top - containerRect.top;// - svgContainer.scrollTop;
+
+  const clone = originalSvg.cloneNode(true);
+  clone.removeAttribute('id');
+  //clone.style.left = `${cloneX}px`;
+  //clone.style.top = `${cloneY}px`;
+  clone.classList.add('clone'); // Apply clone-specific styles
+  
+  const computedStyle = window.getComputedStyle(originalSvg);
+  clone.style.transform = computedStyle.transform;
+
+  svgContainer.appendChild(clone);
+
+  setTimeout(() => {
+    clone.parentNode?.removeChild(clone);
+  }, 200); // Remove clone after fade out
+}
+
+setInterval(cloneSVG, 30);
+
 var video = $('<video id="loader1" width="100%" height="99%" autoplay playsinline></video>');
 
-
+$("#work").toggleClass("hide");
 // Check screen width and set video source accordingly
 if ($(window).width() <= $(window).height()) {
   // Small screen, load mobile video
@@ -24,7 +51,6 @@ if ($(window).width() <= $(window).height()) {
   function isVideoPlaying(video) {
     // Check if video is paused; if it's paused, it's definitely not playing
     console.log(video[0].paused,video[0].ended,video[0].readyState);
-    setTimeout(2000);
     return !video[0].paused && !video[0].ended && video[0].readyState > 2;
 }
   $('.loader-container').append(video);
@@ -167,9 +193,12 @@ console.log("homeiconclick")
 
 
 function removeLoader(){
-$( "#loader" ).fadeOut(500, function() {
+
+$( "#loader" ).fadeOut(5000, function() {
 // fadeOut complete. Remove the loading div
-$( "#loader" ).remove(); //makes page more lightweight 
-$("#work").toggleClass("hide");
+
+$( "#loader" ).remove();
 });  
 }
+
+
