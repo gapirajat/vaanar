@@ -143,7 +143,6 @@ if ($(window).width() <= $(window).height()) {
 
 
 $('video').on('ended',function(){
-  $("#work").toggleClass("hide");
 removeLoader()
 console.log('Video has ended!');
 });
@@ -194,7 +193,8 @@ console.log("homeiconclick")
 
 
 function removeLoader(){
-
+  
+$("#work").toggleClass("hide");
 $( "#loader" ).fadeOut(5000, function() {
 // fadeOut complete. Remove the loading div
 
