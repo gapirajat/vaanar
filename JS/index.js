@@ -38,7 +38,6 @@ setInterval(cloneSVG, 30);
 
 var video = $('<video id="loader1" width="100%" height="99%" autoplay playsinline></video>');
 
-$("#work").toggleClass("hide");
 // Check screen width and set video source accordingly
 if ($(window).width() <= $(window).height()) {
   // Small screen, load mobile video
@@ -143,6 +142,7 @@ if ($(window).width() <= $(window).height()) {
 
 
 $('video').on('ended',function(){
+$("#work").toggleClass("hide");  
 removeLoader()
 console.log('Video has ended!');
 });
