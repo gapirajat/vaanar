@@ -82,7 +82,7 @@ body {
   height: 100%;
   display: block;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #0f0f0f;
+  background-color: white;
   color: white;
 }
 
@@ -111,6 +111,9 @@ body {
 
 .loader-container {
   height: 100dvh;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 .loader-container video {
   -o-object-fit: cover;
@@ -119,7 +122,8 @@ body {
 }
 
 .landing-page-container {
-  animation: fadeIn 1s ease-in-out;
+  /* animation: fadeIn 1s ease-in-out; */
+
 }
 
 .carousel-item {
@@ -247,7 +251,6 @@ body {
 }
 .whole-page-container .home-page-container {
   height: 100dvh;
-  background-color: #0f0f0f;
   color: white;
 }
 .whole-page-container .home-page-container .menu {
@@ -321,8 +324,10 @@ body {
   background-size: cover;
   /* Use background-position to adjust the frame of the image */
   background-position: center center;
+  z-index: -1;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------- */
 @media screen and (min-width: 2400px) {
   .work-info .work-info--header {
     font-family: "Nexa-ExtraLight";
@@ -341,7 +346,8 @@ body {
     font-size: 4rem;
     /* transform: translateY(-100%); */
     position: absolute;
-    top: 0;
+    padding-left: 2%;
+    top: 13vh;
     animation: scaleAndMoveUp 1.5s forwards;
   }
 
@@ -376,6 +382,7 @@ body {
   margin-left: 0.4rem;
 }
 
+/* ---------------------------------------------------------------------------------------------------------------------------- */
 @media only screen and (min-device-width: 300px) and (max-device-width: 1200px) and (orientation: portrait) {
   .whole-page-container .about,
   .whole-page-container .contact {
@@ -403,11 +410,12 @@ body {
   }
   .whole-page-container .about-info--header,
   .whole-page-container .contact-info--header {
-    position: static !important;
-    animation: none !important;
+    position: relative;
     margin-bottom: 1rem !important;
   }
 }
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
 @media only screen and (min-device-width: 1000px) and (max-device-width: 2400px) and (orientation: landscape) {
   .whole-page-container .home-page-container .menu {
     height: auto !important;
@@ -417,6 +425,8 @@ body {
     padding-top: 6rem !important;
   }
 }
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
 @media only screen and (min-device-width: 300px) and (max-device-width: 999px) and (orientation: landscape) {
   .whole-page-container .about,
   .whole-page-container .contact {
@@ -481,6 +491,7 @@ body {
   }
 }
 
+/* ----------------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width: 480px) and (orientation: landscape) {
   .whole-page-container .about-info,
   .whole-page-container .contact-info {
@@ -503,6 +514,7 @@ body {
   }
 }
 
+/* ----------------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width: 800px) {
   .whole-page-container .about {
     width: 100% !important;
@@ -643,7 +655,7 @@ body {
   .whole-page-container .about-info--header,
   .whole-page-container .contact-info--header {
     position: static !important;
-    animation: none !important;
+    animation: About 1s ease;
     margin-bottom: 1rem !important;
   }
   .whole-page-container .about .home-btn-container,
@@ -655,3 +667,73 @@ body {
     height: 11rem !important;
   }
 } /*# sourceMappingURL=style.css.map */
+
+#background-video {
+    position: absolute; 
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    z-index: -100; /* Ensure video stays in the background */
+    background-size: cover;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+}
+
+#loader, #loader1, #loader2 {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10000;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+#svgContainer {
+  width: 100vw;
+  height: 100vh;
+
+}
+
+svg, img {
+  position: absolute;
+  transform-origin: bottom right; /* Ensure scaling is centered */
+  width: 50rem;
+  right: 0;
+  bottom: 0;
+}
+
+svg path {
+  fill: red;
+}
+
+
+#logo {
+z-index: 2; /* Original stays on top */
+}
+
+.clone {
+  filter: sepia(100%) hue-rotate(-50deg) saturate(10000%) brightness(55%) contrast(150%);
+  fill: red !important ;
+  opacity: 0.7;
+  animation: fadeOut 0.3s forwards; /* Fade and remove */
+  z-index: 1; /* Below the original */
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+/* ----------------------About transition in m0bile device-------------------------- */
+@keyframes About {
+  from {
+    transform: translateY(100px); /* Start completely scaled down */
+  }
+  to {
+    transform: translateY(0); /* Scale to full size */
+  }
+}
