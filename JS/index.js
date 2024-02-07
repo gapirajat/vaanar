@@ -143,7 +143,7 @@ if ($(window).width() <= $(window).height()) {
 
 
 
-$('#loader1').on('ended',function(){
+$('video').on('ended',function(){
   if (!functionExecuted) {
     removeLoader();
     functionExecuted = true;}
