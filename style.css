@@ -222,7 +222,7 @@ body {
 .contact-info .contact-info--header,
 .about-info .contact-info--header {
   margin-bottom: 0 !important;
-  animation: scaleAndMoveUp 2s forwards !important;
+  /* animation: About 2s forwards !important; */
 }
 .contact-info .contact-info--text,
 .about-info .contact-info--text {
@@ -412,6 +412,7 @@ body {
   .whole-page-container .contact-info--header {
     position: relative;
     margin-bottom: 1rem !important;
+    animation: About 1s ease;
   }
 }
 
@@ -485,7 +486,7 @@ body {
   .whole-page-container .about-info--header,
   .whole-page-container .contact-info--header {
     position: static !important;
-    animation: none !important;
+    animation: About 1s ease !important;
     font-size: 1.6rem;
     margin-bottom: 1rem !important;
   }
@@ -611,7 +612,6 @@ body {
     background-image: url("./images/work5_small.jpg") !important;
   }
   .whole-page-container {
-    display: block;
     height: 100% !important;
     position: fixed !important;
     right: 0 !important;
@@ -685,10 +685,13 @@ body {
 
 #loader, #loader1, #loader2 {
   position: absolute;
+  bottom: 0;
+  right: 0;
   height: 100vh;
   width: 100vw;
   z-index: 10000;
 }
+
 
 
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
@@ -696,6 +699,8 @@ body {
 #svgContainer {
   width: 100vw;
   height: 100vh;
+  position: absolute;
+  z-index: -1;
 
 }
 
