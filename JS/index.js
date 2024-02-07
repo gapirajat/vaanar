@@ -142,7 +142,10 @@ if ($(window).width() <= $(window).height()) {
 //$('.loader-container').append(video);
 
 
-
+$('#background-video').on('ended',function(){
+  this.load();
+  this.play();
+});
 $('video').on('ended',function(){
   if (!functionExecuted) {
     removeLoader();
