@@ -9,6 +9,7 @@ $(document).ready(function(){
 // Unmute the video on page load
 // unmuteVideo();
 
+let functionExecuted = false;
 function cloneSVG() {
   const svgContainer = document.getElementById('svgContainer');
   const originalSvg = document.getElementById('logo');
@@ -143,7 +144,9 @@ if ($(window).width() <= $(window).height()) {
 
 
 $('#loader1').on('ended',function(){
-removeLoader()
+  if (!functionExecuted) {
+    removeLoader();
+    functionExecuted = true;}
 console.log('Video has ended!');
 });
 
