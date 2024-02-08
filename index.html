@@ -23,34 +23,6 @@
   </head>
 
   <body>
-    <script>
-  function cloneSVG() {
-    const svgContainer = document.getElementById('svgContainer');
-    const originalSvg = document.getElementById('logo');
-    const rect = originalSvg.getBoundingClientRect();
-    const containerRect = svgContainer.getBoundingClientRect();
-
-    const cloneX = rect.left - containerRect.left;// - svgContainer.scrollLeft;
-    const cloneY = rect.top - containerRect.top;// - svgContainer.scrollTop;
-
-    const clone = originalSvg.cloneNode(true);
-    clone.removeAttribute('id');
-    //clone.style.left = `${cloneX}px`;
-    //clone.style.top = `${cloneY}px`;
-    clone.classList.add('clone'); // Apply clone-specific styles
-    
-    const computedStyle = window.getComputedStyle(originalSvg);
-    clone.style.transform = computedStyle.transform;
-
-    svgContainer.appendChild(clone);
-
-    setTimeout(() => {
-      clone.parentNode?.removeChild(clone);
-    }, 200); // Remove clone after fade out
-  }
-
-  setInterval(cloneSVG, 30);
-</script>
     <section id="loader">
       <article>
         <div class="loader-container">
