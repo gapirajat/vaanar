@@ -704,7 +704,7 @@ body {
 
 }
 
-svg, img {
+svg {
   position: absolute;
   transform-origin: bottom right; /* Ensure scaling is centered */
   width: 50rem;
