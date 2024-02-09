@@ -146,7 +146,7 @@ $('#background-video').on('ended',function(){
   this.load();
   this.play();
 });
-$('video').on('ended',function(){
+$('video').on('timeupdate',function(){
       var timeLeft = this.duration - this.currentTime;
     console.log(this.currentTime);
       if (timeLeft <= 2 && !video.hasClass('fading')) {
