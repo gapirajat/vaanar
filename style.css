@@ -742,3 +742,10 @@ z-index: 2; /* Original stays on top */
     transform: translateY(0); /* Scale to full size */
   }
 }
+
+/* --------------------------------------------------------------------------------------- */
+
+img {
+  transform: translate3d(0,0,0); /* Enable hardware acceleration */
+  will-change: transform; /* Optimize for transformations */
+}
