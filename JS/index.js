@@ -149,10 +149,10 @@ $('#background-video').on('ended',function(){
 $('video').on('timeupdate',function(){
       var timeLeft = this.duration - this.currentTime;
     console.log(this.currentTime);
-      if (timeLeft <= 2 && !video.hasClass('fading')) {
+    if (timeLeft <= 3 && !video.hasClass('fading')) {
         console.log(timeLeft);
         video.addClass('fading');
-        video.animate({opacity: 0}, 1000); // Fade over 2 seconds
+        video.animate({opacity: 0}, 1); // Fade over 2 seconds
         removeLoader();
         functionExecuted = true;
       }
