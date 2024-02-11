@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  let functionExecuted = false;
   // var loaderVideo = $("#loader")[0]; // Get the raw DOM element
 
 // Function to unmute the video
@@ -9,7 +10,6 @@ $(document).ready(function(){
 // Unmute the video on page load
 // unmuteVideo();
 
-let functionExecuted = false;
 function cloneSVG() {
   const svgContainer = document.getElementById('svgContainer');
   const originalSvg = document.getElementById('logo');
@@ -147,15 +147,20 @@ $('#background-video').on('ended',function(){
   this.play();
 });
 $('video').on('timeupdate',function(){
-      var timeLeft = this.duration - this.currentTime;
+  if (!functionExecuted) {
+    
+    var timeLeft = this.duration - this.currentTime;
     console.log(this.currentTime);
-    if (timeLeft <= 3 && !video.hasClass('fading')) {
+      if (timeLeft <= 3 && !video.hasClass('fading')) {
         console.log(timeLeft);
         video.addClass('fading');
         video.animate({opacity: 0}, 1); // Fade over 2 seconds
         removeLoader();
         functionExecuted = true;
       }
+
+  }
+
 console.log('Video has ended!');
 });
 
@@ -178,6 +183,7 @@ $("#aboutIcon").click(function(){
 $("#about").toggleClass("hide");
 $("#home").toggleClass("hide");
 $("#logo").addClass("scale-down-logo").removeClass("scale-up-logo");
+$("#logo2").addClass("scale-down-logo").removeClass("scale-up-logo");
 console.log("abouticonclick")
 });
 
@@ -185,6 +191,7 @@ $("#contactIcon").click(function(){
 $("#contact").toggleClass("hide");
 $("#home").toggleClass("hide");
 $("#logo").addClass("scale-down-logo").removeClass("scale-up-logo");
+$("#logo2").addClass("scale-down-logo").removeClass("scale-up-logo");
 console.log("contacticonclick")
 });
 
@@ -192,6 +199,7 @@ $("#abouthomeIcon").click(function(){
 $("#about").toggleClass("hide");
 $("#home").toggleClass("hide");
 $("#logo").addClass("scale-up-logo").removeClass("scale-down-logo");
+$("#logo2").addClass("scale-up-logo").removeClass("scale-down-logo");
 console.log("homeiconclick")
 });
 
@@ -199,19 +207,21 @@ $("#contacthomeIcon").click(function(){
 $("#contact").toggleClass("hide");
 $("#home").toggleClass("hide");
 $("#logo").addClass("scale-up-logo").removeClass("scale-down-logo");
+$("#logo2").addClass("scale-up-logo").removeClass("scale-down-logo");
 console.log("homeiconclick")
 });
 });
 
 
 function removeLoader(){
-  
-$("#work").toggleClass("hide");
+  console.log("ji");
+  $("#work").toggleClass("hide");
+
 $( "#loader" ).fadeOut(5000, function() {
 // fadeOut complete. Remove the loading div
-
 $( "#loader" ).remove();
 });  
+
 }
 
 
