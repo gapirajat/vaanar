@@ -10,18 +10,18 @@ $(document).ready(function(){
 // Unmute the video on page load
 // unmuteVideo();
 
-let preloadedSvg = null;
+// let preloadedSvg = null;
 
-async function preloadSVG() {
-  const response = await fetch('./images/logo-3black-2.svg');
-  const svgText = await response.text();
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(svgText, "image/svg+xml");
-  preloadedSvg = doc.documentElement;
-}
+// async function preloadSVG() {
+//   const response = await fetch('./images/logo-3black-2.svg');
+//   const svgText = await response.text();
+//   const parser = new DOMParser();
+//   const doc = parser.parseFromString(svgText, "image/svg+xml");
+//   preloadedSvg = doc.documentElement;
+// }
 
-// Call preloadSVG at the start, maybe in a window.onload handler or similar
-preloadSVG();
+// // Call preloadSVG at the start, maybe in a window.onload handler or similar
+// preloadSVG();
 
 
 function cloneSVG() {
@@ -46,7 +46,7 @@ function cloneSVG() {
 
   setTimeout(() => {
     clone.parentNode?.removeChild(clone);
-  }, 100); // Remove clone after fade out
+  }, 1000); // Remove clone after fade out
 }
 
 // function cloneSVG() {
@@ -74,9 +74,19 @@ function cloneSVG() {
 //       clone.parentNode?.removeChild(clone);
 //     }, 200); // Adjust the timeout as needed
 // }
+  var interval;  
+$('#logo2').on('animationstart', function() {
+  console.log('Animation started');
+  interval = setInterval(cloneSVG, 0.01);
+  // Your code to run when the animation starts
+});
+
+$('#logo2').on('animationend', function() {
+  console.log('Animation ended');
+  clearInterval(interval);
+});
 
 
-setInterval(cloneSVG, 0.001);
 
 var video = $('<video id="loader1" width="100%" height="99%" autoplay playsinline></video>');
 
