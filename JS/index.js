@@ -192,7 +192,7 @@ $('video').on('timeupdate',function(){
     
     var timeLeft = this.duration - this.currentTime;
     console.log(this.currentTime);
-      if (timeLeft <= 20 && !video.hasClass('fading')) {
+      if (timeLeft <= 25 && !video.hasClass('fading')) {
         console.log(timeLeft);
         video.addClass('fading');
         video.animate({opacity: 0}, 1); // Fade over 2 seconds
