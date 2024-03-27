@@ -726,7 +726,7 @@ svg {
   filter: blur(0.5);
   filter: sepia(100%) hue-rotate(-50deg) saturate(10000%) brightness(55%) contrast(150%);
   opacity: 0.7;
-  /* animation: fadeOut 0.3s forwards; */
+  animation: fadeOut 0.9s forwards;
   z-index: 1; /* Below the original */
   background-image: url(./images/logo-3-svg.svg);
   background-position: center;

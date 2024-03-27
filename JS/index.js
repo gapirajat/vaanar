@@ -46,7 +46,7 @@ function cloneSVG() {
 
   setTimeout(() => {
     clone.parentNode?.removeChild(clone);
-  }, 200); // Remove clone after fade out
+  }, 100); // Remove clone after fade out
 }
 
 // function cloneSVG() {
@@ -76,7 +76,7 @@ function cloneSVG() {
 // }
 
 
-setInterval(cloneSVG, 30);
+setInterval(cloneSVG, 0.001);
 
 var video = $('<video id="loader1" width="100%" height="99%" autoplay playsinline></video>');
 
