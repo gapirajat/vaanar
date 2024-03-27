@@ -288,13 +288,14 @@ body {
   top: 3rem;
   left: 3rem;
 }
-.whole-page-container img {
+.whole-page-container #logo2,#logo {
   align-self: flex-end;
   position: absolute;
   bottom: 0;
   right: 0;
   transform-origin: bottom right;
   width: clamp(15rem, 10vw, 25rem);
+  height: clamp(10rem, 10vw, 25rem);
 }
 
 .scale-down-logo {
@@ -675,11 +676,10 @@ body {
     bottom: 0;
     min-width: 100%; 
     min-height: 100%;
-    width: auto; 
-    height: auto;
     z-index: -100; /* Ensure video stays in the background */
     background-size: cover;
     object-fit: cover;
+    background-position: center;
     padding: 0;
     margin: 0;
 }
@@ -716,16 +716,28 @@ svg {
 
 
 #logo {
-z-index: 2; /* Original stays on top */
+  z-index: 2; /* Original stays on top */
+  background-image: url(./images/logo-3-svg.svg);
+  background-position: center;
+  background-size: cover;
 }
 
 .clone {
   filter: blur(0.5);
   filter: sepia(100%) hue-rotate(-50deg) saturate(10000%) brightness(55%) contrast(150%);
-  fill: red !important ;
   opacity: 0.7;
-  animation: fadeOut 0.3s forwards; /* Fade and remove */
+  /* animation: fadeOut 0.3s forwards; */
   z-index: 1; /* Below the original */
+  background-image: url(./images/logo-3-svg.svg);
+  background-position: center;
+  background-size: cover;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom right;
+  width: clamp(15rem, 10vw, 25rem);
+  height: clamp(10rem, 10vw, 25rem);
 }
 
 @keyframes fadeOut {
@@ -750,5 +762,15 @@ img {
 }
 
 #logo2 {
+  /* filter: invert(1); */
+  background-image: url(./images/logo-3black-svg.svg);
+  background-position: center;
+  background-size: cover;
   filter: invert(1);
+}
+
+.svg-wrapper {
+  padding: 1rem;
+  /* overflow: hidden; */
+
 }

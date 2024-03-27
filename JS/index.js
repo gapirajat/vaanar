@@ -10,14 +10,28 @@ $(document).ready(function(){
 // Unmute the video on page load
 // unmuteVideo();
 
+let preloadedSvg = null;
+
+async function preloadSVG() {
+  const response = await fetch('./images/logo-3black-2.svg');
+  const svgText = await response.text();
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(svgText, "image/svg+xml");
+  preloadedSvg = doc.documentElement;
+}
+
+// Call preloadSVG at the start, maybe in a window.onload handler or similar
+preloadSVG();
+
+
 function cloneSVG() {
   const svgContainer = document.getElementById('svgContainer');
   const originalSvg = document.getElementById('logo');
-  const rect = originalSvg.getBoundingClientRect();
-  const containerRect = svgContainer.getBoundingClientRect();
+  // const rect = originalSvg.getBoundingClientRect();
+  // const containerRect = svgContainer.getBoundingClientRect();
 
-  const cloneX = rect.left - containerRect.left;// - svgContainer.scrollLeft;
-  const cloneY = rect.top - containerRect.top;// - svgContainer.scrollTop;
+  // const cloneX = rect.left - containerRect.left;// - svgContainer.scrollLeft;
+  // const cloneY = rect.top - containerRect.top;// - svgContainer.scrollTop;
 
   const clone = originalSvg.cloneNode(true);
   clone.removeAttribute('id');
@@ -34,6 +48,33 @@ function cloneSVG() {
     clone.parentNode?.removeChild(clone);
   }, 200); // Remove clone after fade out
 }
+
+// function cloneSVG() {
+//   if (!preloadedSvg) {
+//     console.error('SVG is not yet loaded.');
+//     return;
+//   }
+
+//   const svgContainer = document.getElementById('svgContainer');
+//   const clone = preloadedSvg.cloneNode(true);
+
+//   // Remove any ID to avoid duplicates and optionally set other attributes
+//   clone.removeAttribute('id');
+//   clone.style.width = '100px';
+//   clone.style.height = '100px';
+//   // clone.style.transform = 'scale(1.5)';
+//   clone.classList.add('clone');
+
+//   // Append the clone to the container
+//   svgContainer.appendChild(clone);
+
+//   // Optional: Perform any other adjustments or set timeouts as needed
+//     // Set a timeout to remove the clone after some time
+//     setTimeout(() => {
+//       clone.parentNode?.removeChild(clone);
+//     }, 200); // Adjust the timeout as needed
+// }
+
 
 setInterval(cloneSVG, 30);
 
@@ -151,7 +192,7 @@ $('video').on('timeupdate',function(){
     
     var timeLeft = this.duration - this.currentTime;
     console.log(this.currentTime);
-      if (timeLeft <= 3 && !video.hasClass('fading')) {
+      if (timeLeft <= 30 && !video.hasClass('fading')) {
         console.log(timeLeft);
         video.addClass('fading');
         video.animate({opacity: 0}, 1); // Fade over 2 seconds
