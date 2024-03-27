@@ -77,7 +77,7 @@ function cloneSVG() {
   var interval;  
 $('#logo2').on('animationstart', function() {
   console.log('Animation started');
-  interval = setInterval(cloneSVG, 0.01);
+  interval = setInterval(cloneSVG, 20);
   // Your code to run when the animation starts
 });
 
