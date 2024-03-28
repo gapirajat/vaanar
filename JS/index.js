@@ -226,7 +226,7 @@ $('video').on('timeupdate',function(){
     
     var timeLeft = this.duration - this.currentTime;
     console.log(this.currentTime);
-      if (timeLeft <= 3 && !video.hasClass('fading') && desktop) {
+      if (timeLeft <= 6 && !video.hasClass('fading') && desktop) {
         console.log(timeLeft);
         console.log('desktop');
         video.addClass('fading');
