@@ -1,5 +1,6 @@
 $(document).ready(function(){
   let functionExecuted = false;
+  var desktop = false;
   // var loaderVideo = $("#loader")[0]; // Get the raw DOM element
 
 // Function to unmute the video
@@ -189,6 +190,7 @@ if ($(window).width() <= $(window).height()) {
   // alert('Please enable audio to enjoy our video content.');
   //video[0].resume().catch(e => console.log("Failed to play muted video automatically after rejection:", e)); // Attempt to play it muted
    console.log('desktop');
+   desktop = true;
   // var video = $('<video id="loader" width="100%" height="99%" autoplay playsinline></video>');
   video.append('<source src="./images/loader.mp4" type="video/mp4">');
   // var promise = video[0].play();
@@ -224,12 +226,21 @@ $('video').on('timeupdate',function(){
     
     var timeLeft = this.duration - this.currentTime;
     console.log(this.currentTime);
-      if (timeLeft <= 28 && !video.hasClass('fading')) {
+      if (timeLeft <= 28 && !video.hasClass('fading') && desktop) {
         console.log(timeLeft);
+        console.log('desktop');
         video.addClass('fading');
         video.animate({opacity: 0}, 1); // Fade over 2 seconds
         removeLoader();
         functionExecuted = true;
+      }
+      else if (timeLeft <= 3 && !video.hasClass('fading') && !desktop) {
+        console.log('mobile');
+        video.addClass('fading');
+        video.animate({opacity: 0}, 1); // Fade over 2 seconds
+        removeLoader();
+        functionExecuted = true;
+        
       }
 
   }
