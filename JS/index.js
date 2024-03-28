@@ -171,7 +171,7 @@ if ($(window).width() <= $(window).height()) {
   video.append('<source src="./images/loader.mp4" type="video/mp4">');
   // var promise = video[0].play();
 
-  function isVideoPlaying(video) {
+function isVideoPlaying(video) {
     // Check if video is paused; if it's paused, it's definitely not playing
     console.log(video[0].paused,video[0].ended,video[0].readyState);
     
