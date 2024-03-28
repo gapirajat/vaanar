@@ -796,3 +796,9 @@ img {
   /* overflow: hidden; */
 
 }
+
+/* //hardware acceleration */
+body {
+  transform: translateZ(0); /* Or translate3d(0,0,0) */
+  will-change: transform, opacity;
+}

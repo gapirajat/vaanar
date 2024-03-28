@@ -26,12 +26,10 @@ $(document).ready(function(){
 var imagesToPreload = [
   './images/work1.jpg',
   './images/work2.jpg',
-  './images/work3.jpg',
   './images/work4.jpg',
   './images/work5.jpg',
   './images/work1_small.jpg',
   './images/work2_small.jpg',
-  './images/work3_small.jpg',
   './images/work4_small.jpg',
   './images/work5_small.jpg',
   './images/logo-2.png',
