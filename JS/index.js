@@ -39,7 +39,7 @@ var imagesToPreload = [
 ];
 
 function preloadImage(imageUrl) {
-  $('head').append($('<link rel="preload" as="image" href="' + imageUrl + '">'));
+  $('head').append($('<link rel="preload" as="image" href="' + imageUrl + '" as="image" >'));
 }
 
 
@@ -285,13 +285,13 @@ $("#logo").addClass("scale-up-logo").removeClass("scale-down-logo");
 $("#logo2").addClass("scale-up-logo").removeClass("scale-down-logo");
 console.log("homeiconclick")
 });
-});
-
 
 function removeLoader(){
   console.log("ji");
   $("#work").toggleClass("hide");
-
+  imagesToPreload.forEach(function(imageUrl) {
+    preloadImage(imageUrl);
+  });
 $( "#loader" ).fadeOut(5000, function() {
 // fadeOut complete. Remove the loading div
 $( "#loader" ).remove();
@@ -299,8 +299,11 @@ imagesToPreload.forEach(function(imageUrl) {
   preloadImage(imageUrl);
 });
 });  
-
-
 }
+
+});
+
+
+
 
 
