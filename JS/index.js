@@ -23,6 +23,30 @@ $(document).ready(function(){
 // // Call preloadSVG at the start, maybe in a window.onload handler or similar
 // preloadSVG();
 
+var imagesToPreload = [
+  './images/work1.jpg',
+  './images/work2.jpg',
+  './images/work3.jpg',
+  './images/work4.jpg',
+  './images/work5.jpg',
+  './images/work1_small.jpg',
+  './images/work2_small.jpg',
+  './images/work3_small.jpg',
+  './images/work4_small.jpg',
+  './images/work5_small.jpg',
+  './images/logo-2.png',
+  './images/logo-3.png'
+];
+
+function preloadImage(imageUrl) {
+  $('head').append($('<link rel="preload" as="image" href="' + imageUrl + '">'));
+}
+
+
+
+function preloadImage(imageUrl) {
+  $('head').append($('<link rel="preload" as="image" href="' + imageUrl + '">'));
+}
 
 function cloneSVG() {
   const svgContainer = document.getElementById('svgContainer');
@@ -271,7 +295,11 @@ function removeLoader(){
 $( "#loader" ).fadeOut(5000, function() {
 // fadeOut complete. Remove the loading div
 $( "#loader" ).remove();
+imagesToPreload.forEach(function(imageUrl) {
+  preloadImage(imageUrl);
+});
 });  
+
 
 }
 
