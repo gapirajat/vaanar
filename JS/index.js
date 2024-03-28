@@ -72,32 +72,6 @@ function cloneSVG() {
     clone.parentNode?.removeChild(clone);
   }, 1000); // Remove clone after fade out
 }
-
-// function cloneSVG() {
-//   if (!preloadedSvg) {
-//     console.error('SVG is not yet loaded.');
-//     return;
-//   }
-
-//   const svgContainer = document.getElementById('svgContainer');
-//   const clone = preloadedSvg.cloneNode(true);
-
-//   // Remove any ID to avoid duplicates and optionally set other attributes
-//   clone.removeAttribute('id');
-//   clone.style.width = '100px';
-//   clone.style.height = '100px';
-//   // clone.style.transform = 'scale(1.5)';
-//   clone.classList.add('clone');
-
-//   // Append the clone to the container
-//   svgContainer.appendChild(clone);
-
-//   // Optional: Perform any other adjustments or set timeouts as needed
-//     // Set a timeout to remove the clone after some time
-//     setTimeout(() => {
-//       clone.parentNode?.removeChild(clone);
-//     }, 200); // Adjust the timeout as needed
-// }
   var interval;  
 $('#logo2').on('animationstart', function() {
   console.log('Animation started');
@@ -135,43 +109,9 @@ if ($(window).width() <= $(window).height()) {
     
   }
   
-
-
-// promise.then(function() {
-//     // Autoplay with sound is enabled
-//     console.log('Autoplay with sound is enabled.');
-//     // Here, you don't need to change the video attributes since autoplay with sound worked
-//     video.prop('muted', false)
-//     $('.loader-container').append(video);
-// }).catch(function(error) {
-//     // Autoplay with sound is not allowed
-//     console.log('Autoplay with sound is not allowed. Error: ' + error);
-//     //alert(promise);
-//     // Here, you might decide to mute the video and try to play it again or handle it differently
-//     // $('#loader2').remove();
-//     // var video1 = $('</video>');
-    
-//     setTimeout(1000);
-//     var promise2 = video[0].play();
-//     promise2.then(function() {
-//       video.prop('muted', false)
-//       $('.loader-container').append(video);
-//       }).catch(function(error2) {
-//       console.log(error2);
-//       video.prop('muted', true)
-//       $('.loader-container').append(video);
-        
-//       }
-      
-//     )
-    // video1[0].play().catch(e => console.log("Failed to play muted video automatically after rejection:", e)); // Attempt to play it muted
-    
-  //   $('#loader').on('ended', function() {
-  //     console.log('Video playback has ended. Removing the video element.');
-  //     $('video').remove(); // Removes the video element from the DOM
-  // });
-// }
-  // );
+  imagesToPreload.forEach(function(imageUrl) {
+    preloadImage(imageUrl);
+  });
 
 } else {
   // Larger screen, load desktop video
@@ -209,6 +149,9 @@ function isVideoPlaying(video) {
       // $('.loader-container').css("display", "none");
       $('#loader1').before('<video id="loader" width="100%" height="99%"  autoplay muted playsinline><source src="./images/loader.mp4" type="video/mp4"></video>');
   
+      imagesToPreload.forEach(function(imageUrl) {
+        preloadImage(imageUrl);
+      });
 }
 
 
@@ -295,9 +238,7 @@ function removeLoader(){
 $( "#loader" ).fadeOut(5000, function() {
 // fadeOut complete. Remove the loading div
 $( "#loader" ).remove();
-imagesToPreload.forEach(function(imageUrl) {
-  preloadImage(imageUrl);
-});
+
 });  
 }
 
