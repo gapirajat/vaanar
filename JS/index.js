@@ -292,11 +292,9 @@ function removeLoader(){
   });
 $( "#loader" ).fadeOut(5000, function() {
 // fadeOut complete. Remove the loading div
-imagesToPreload.forEach(function(imageUrl) {
-  preloadImage(imageUrl);
-});
-$( "#loader" ).remove();
+$("#home").append($('<video autoplay loop muted playsinline id="background-video"><source src="./images/meteorite.mp4" type="video/mp4">Your browser does not support the video tag.</video>'))
 
+$( "#loader" ).remove();
 });  
 }
 
